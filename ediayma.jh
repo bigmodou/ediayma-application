@@ -1,0 +1,89 @@
+
+entity Region {
+	regionName String
+}
+
+entity Country {
+	countryName String
+}
+
+// an ignored comment
+/** not an ignored comment */
+entity Location {
+	streetAddress String,
+	postalCode String,
+	city String,
+	stateProvince String
+}
+
+entity Client {
+	nom String required,
+    prenom String required,
+    email String required,
+    telephone String required
+}
+
+/**
+ * Task entity.
+ * @author The JHipster team.
+ */
+ entity Boutique {
+	nom String,
+	description String,
+    adresse String
+
+}
+
+entity Produits {
+	title String,
+	description String,
+    prix Long,
+}
+
+/**
+ * The Employee entity.
+ */
+
+entity Categorie {
+	titre String,
+	description Long,
+}
+
+
+relationship OneToOne {
+	Country{region} to Region
+}
+
+relationship OneToOne {
+	Location{country} to Country
+}
+
+
+// defining multiple OneToMany relationships with comments
+relationship OneToMany {
+	Client to Boutique{client},
+}
+relationship OneToMany {
+	Boutique to Produits{boutique},
+}
+
+relationship OneToMany {
+	Produits to Categorie{produits},
+}
+relationship OneToMany {
+	Boutique to Location{boutique},
+}
+// defining multiple oneToOne relationships
+
+// Set pagination options
+paginate Produits, Client, Boutique with infinite-scroll
+paginate Produits with pagination
+
+// Use Data Transfer Objects (DTO)
+// dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl except Client, Boutique, Produits
+
+// Set an angular suffix
+// angularSuffix * with mySuffix

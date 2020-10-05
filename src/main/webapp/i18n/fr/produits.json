@@ -1,0 +1,26 @@
+{
+  "ediaymaApplicationApp": {
+    "produits": {
+      "home": {
+        "title": "Produits",
+        "createLabel": "Créer un nouveau Produits",
+        "createOrEditLabel": "Créer ou éditer un Produits",
+        "notFound": "Aucun Produits trouvé"
+      },
+      "created": "Un nouveau Produits a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Produits avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Produits avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Produits {{ id }} ?"
+      },
+      "detail": {
+        "title": "Produits"
+      },
+      "title": "Title",
+      "description": "Description",
+      "prix": "Prix",
+      "categorie": "Categorie",
+      "boutique": "Boutique"
+    }
+  }
+}

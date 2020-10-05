@@ -1,0 +1,44 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="produits">
+            <h2><span jhiTranslate="ediaymaApplicationApp.produits.detail.title">Produits</span> {{ produits.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="ediaymaApplicationApp.produits.title">Title</span></dt>
+                <dd>
+                    <span>{{ produits.title }}</span>
+                </dd>
+                <dt><span jhiTranslate="ediaymaApplicationApp.produits.description">Description</span></dt>
+                <dd>
+                    <span>{{ produits.description }}</span>
+                </dd>
+                <dt><span jhiTranslate="ediaymaApplicationApp.produits.prix">Prix</span></dt>
+                <dd>
+                    <span>{{ produits.prix }}</span>
+                </dd>
+                <dt><span jhiTranslate="ediaymaApplicationApp.produits.boutique">Boutique</span></dt>
+                <dd>
+                    <div *ngIf="produits.boutique">
+                        <a [routerLink]="['/boutique', produits.boutique?.id, 'view']">{{ produits.boutique?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/produits', produits.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

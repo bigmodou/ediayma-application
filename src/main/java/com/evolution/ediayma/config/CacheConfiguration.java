@@ -47,6 +47,17 @@ public class CacheConfiguration {
             createCache(cm, com.evolution.ediayma.domain.User.class.getName());
             createCache(cm, com.evolution.ediayma.domain.Authority.class.getName());
             createCache(cm, com.evolution.ediayma.domain.User.class.getName() + ".authorities");
+            createCache(cm, com.evolution.ediayma.domain.Region.class.getName());
+            createCache(cm, com.evolution.ediayma.domain.Country.class.getName());
+            createCache(cm, com.evolution.ediayma.domain.Location.class.getName());
+            createCache(cm, com.evolution.ediayma.domain.Client.class.getName());
+            createCache(cm, com.evolution.ediayma.domain.Client.class.getName() + ".boutiques");
+            createCache(cm, com.evolution.ediayma.domain.Boutique.class.getName());
+            createCache(cm, com.evolution.ediayma.domain.Boutique.class.getName() + ".produits");
+            createCache(cm, com.evolution.ediayma.domain.Boutique.class.getName() + ".locations");
+            createCache(cm, com.evolution.ediayma.domain.Produits.class.getName());
+            createCache(cm, com.evolution.ediayma.domain.Produits.class.getName() + ".categories");
+            createCache(cm, com.evolution.ediayma.domain.Categorie.class.getName());
             // jhipster-needle-ehcache-add-entry
         };
     }

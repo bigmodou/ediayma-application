@@ -1,0 +1,43 @@
+{
+  "name": "Produits",
+  "fields": [
+    {
+      "fieldName": "title",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "description",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "prix",
+      "fieldType": "Long"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "categorie",
+      "otherEntityRelationshipName": "produits",
+      "relationshipName": "categorie"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "boutique",
+      "otherEntityRelationshipName": "produits",
+      "relationshipName": "boutique",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20201005131312",
+  "entityTableName": "produits",
+  "dto": "no",
+  "pagination": "pagination",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}
